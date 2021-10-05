@@ -1,5 +1,5 @@
 # Justin Thoreson
-# Plus One LeetCode working attempts
+# Plus One LeetCode attempts
 #
 # All attempts that appear in the file pass all LeetCode provided tests.
 # Each attempt is meant to be an improvement of the previous attempt.
