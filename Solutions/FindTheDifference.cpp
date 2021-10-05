@@ -1,3 +1,7 @@
+// Justin Thoreson
+// Find the Difference LeetCode attempts
+
+// First attempt (best)
 class Solution {
 public:
     char findTheDifference(string s, string t) {
