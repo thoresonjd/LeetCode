@@ -2,7 +2,7 @@
 // Missing number LeetCode solution
 
 // First attempt (best)
-class Solution {
+class MissingNumber {
     public int missingNumber(int[] nums) {
         Arrays.sort(nums);
         
