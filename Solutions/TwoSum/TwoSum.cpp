@@ -1,7 +1,7 @@
 // Justin Thoreson
 // Two Sum Leetcode Solution
 
-// Best C++ attempt
+// Latest C++ attempt
 // Runtime: Faster than 95.35% of C++ online submissions for Two Sum.
 // Memory: Less than 24.97% of C++ online submissions for Two Sum.
 // Attended a hacking lab on hash maps, solution was learned via group discussion.
@@ -10,7 +10,6 @@
 // add it as a key with the index as its value.
 // Otherwise, if there exists a key k such that the current number + k = target,
 // return the index of k and the index of the current number
-
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -22,6 +21,34 @@ public:
             else
                 hash[nums[i]] = i;
         }
+        return {-1, -1};
+    }
+};
+
+// Original C++ attempt (best in terms of time and space)
+// Runtime: Faster than 99.52% of C++ online submissions for Two Sum.
+// Memory: Less than 62.43% of C++ online submissions for Two Sum.
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> v = nums, res;
+        sort(v.begin(), v.end());
+        
+        int l = 0, r = v.size()-1;
+        while (l < r) {
+            int sum = v[l] + v[r];
+            if (sum < target) l++;
+            else if (sum > target) r--;
+            else {
+                int index = distance(nums.begin(), find(nums.begin(), nums.end(), v[l]));
+                res.push_back(index);
+                nums[index] = INT_MIN;
+                index = distance(nums.begin(), find(nums.begin(), nums.end(), v[r]));
+                res.push_back(index);
+                return res;
+            }
+        }
+        
         return {-1, -1};
     }
 };
