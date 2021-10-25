@@ -10,7 +10,7 @@
  * };
  */
 class Solution {
-public:
+private:
     TreeNode* convert(vector<int>& nums, int l, int r) {
         if (nums.size() == 0 || l > r) return nullptr;
         if (nums.size() == 1) return new TreeNode(nums[0]);
@@ -22,6 +22,7 @@ public:
         return head;
     }
     
+public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
         return convert(nums, 0, nums.size()-1);
     }
