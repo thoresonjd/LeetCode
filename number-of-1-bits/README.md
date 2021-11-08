@@ -1,4 +1,6 @@
-[Discussion Post (created on 7/10/2021 at 18:0)](https://leetcode.com/problems/number-of-1-bits/discuss/1565597/C%2B%2B-solution-w-bit-shifting-and-explanation)  
+[Discussion Post (created on 7/10/2021 at 18:0)](https://leetcode.com/problems/number-of-1-bits/discuss/1565597/C%2B%2B-solution-w-bit-shifting-and-explanation)
+![image](https://user-images.githubusercontent.com/77815463/140673164-38681a49-6c95-4532-8453-73e12c425787.png)
+
 <h2>191. Number of 1 Bits</h2><h3>Easy</h3><hr><div><p>Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the <a href="http://en.wikipedia.org/wiki/Hamming_weight" target="_blank">Hamming weight</a>).</p>
 
 <p><strong>Note:</strong></p>
