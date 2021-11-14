@@ -1,36 +1,15 @@
 class Solution {
 public:
     int countGoodSubstrings(string s) {
-        int n = s.length();
+        int n = s.length(), count = 0, k = 3;
+    
         if (n < 3) return 0;
         
-        int count = 0;
-        
-        int arr[26];
-        
-        for(int i = 0; i < 26; i++) {
-            arr[i] = 0;
-        }
-        
-        for (int i = 0; i < s.length()-2; i++) {
-            for (int j = 0; j < 3; j++) {
-                char c = s[i+j];
-                arr[c - 'a']++;
-            }
-            
-            bool goodSub = true;
-            for (int j = 0; j < 26; j++) {
-                if (arr[j] > 1) {
-                    goodSub = false;
-                    break;
-                }
-            }
-            if (goodSub) count++;
-            
-            for(int i = 0; i < 26; i++) {
-                arr[i] = 0;
-            }
-            
+        for (int i = 0; i < n - k + 1; i++) {
+            int arr[3] = {s[i], s[i+1], s[i+2]};
+            if (arr[0] != arr[1] && arr[1] != arr[2] && arr[2] != arr[0]) {
+                count++;
+            }          
         }
         
         return count;
