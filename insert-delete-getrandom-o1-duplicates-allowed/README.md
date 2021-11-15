@@ -1,3 +1,5 @@
+[Discussion Post (created on 15/11/2021 at 14:23)](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/discuss/1580230/Simple-Python-solution)
+
 <h2>381. Insert Delete GetRandom O(1) - Duplicates allowed</h2><h3>Hard</h3><hr><div><p><code>RandomizedCollection</code> is a data structure that contains a collection of numbers, possibly duplicates (i.e., a multiset). It should support inserting and removing specific elements and also removing a random element.</p>
 
 <p>Implement the <code>RandomizedCollection</code> class:</p>
