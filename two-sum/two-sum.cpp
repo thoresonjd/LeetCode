@@ -2,10 +2,6 @@
 // Two Sum Leetcode Solution
 
 // Latest C++ attempt
-// Runtime: Faster than 95.35% of C++ online submissions for Two Sum.
-// Memory: Less than 24.97% of C++ online submissions for Two Sum.
-// Attended a hacking lab on hash maps, solution was learned via group discussion.
-
 // If a number in the vector does not exist in the map, 
 // add it as a key with the index as its value.
 // Otherwise, if there exists a key k such that the current number + k = target,
