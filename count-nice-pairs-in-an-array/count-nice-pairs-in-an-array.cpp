@@ -1,41 +1,29 @@
 class Solution {
 public:
-    // Solution to LeetCode problem #7
     int rev(int x) {
-        if (x >= INT_MAX || x <= INT_MIN) return 0;
+        if (x >= INT_MAX || x <= INT_MIN) 
+            return 0;
         
-        ostringstream oss;
-        oss << x;
-        string num = oss.str();
-
-        int res, sign = x > 0 ? 1 : -1, len = num.length();
-        for (int i = 0; i < len/2; i++)
-            swap(num[i], num[len-i-1]);
-
+        string num = to_string(abs(x));
+        int sign = x > 0 ? 1 : -1;
+        
+        for (int i = 0 ; i < num.length()/2; i++)
+            swap(num[i], num[num.length()-i-1]);
+        
         try {
-            res = stoi(num);
+            return sign * stoi(num);
         } catch (out_of_range& e) {
-            return 0; 
+            printf("Out of range");
         }
         
-        return sign * res;
+        return 0;
     }
     
     int countNicePairs(vector<int>& nums) {
         int nicePairs = 0, mod = 1e9 + 7;
-        map<int, int> equalDiffs; // Track equal diffs (num - rev(num))
+        unordered_map<int, int> equalDiffCount; // Track equal diffs (num - rev(num))
         for (int num : nums)
-            nicePairs = (nicePairs + equalDiffs[num - rev(num)]++) % mod;
+            nicePairs = (nicePairs + equalDiffCount[num - rev(num)]++) % mod;
         return nicePairs;
     }
-    
-    // O(n^2) below 
-    // int countNicePairs(vector<int>& nums) {
-    //     int nicePairs = 0;
-    //     for (int i = 0; i < nums.size() - 1; i++)
-    //         for (int j = i + 1; j < nums.size(); j++)
-    //             if (nums[i] + rev(nums[j]) == nums[j] + rev(nums[i]))
-    //                 nicePairs++;
-    //     return nicePairs;
-    // }
 };
