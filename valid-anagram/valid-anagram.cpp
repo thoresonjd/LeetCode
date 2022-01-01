@@ -3,12 +3,8 @@ public:
     bool isAnagram(string s, string t) {
         if (s.size() != t.size())
             return false;
-        string sSorted = s, tSorted = t;
-        sort(sSorted.begin(), sSorted.end());
-        sort(tSorted.begin(), tSorted.end());
-        for (int i = 0; i < s.size(); i++)
-            if (sSorted[i] != tSorted[i])
-                return false;
-        return true;
+        sort(s.begin(), s.end());
+        sort(t.begin(), t.end());
+        return s == t;
     }
 };
