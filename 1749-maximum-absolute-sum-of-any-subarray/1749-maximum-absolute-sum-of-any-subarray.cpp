@@ -4,8 +4,8 @@ public:
         int prefix = 0, minimum = 0, maximum = 0;
         for (int num : nums) {
             prefix += num;
-            minimum = min(prefix, minimum);
-            maximum = max(prefix, maximum);
+            minimum = prefix < minimum ? prefix : minimum; //min(prefix, minimum);
+            maximum = prefix > maximum ? prefix : maximum; //max(prefix, maximum);
         }
         return maximum - minimum;
     }
