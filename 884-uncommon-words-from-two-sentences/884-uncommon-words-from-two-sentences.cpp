@@ -20,10 +20,9 @@ public:
             freq[word]++;
         } while (stream2);
         
-        for (auto it = freq.begin(); it != freq.end(); it++) {
+        for (auto it = freq.begin(); it != freq.end(); it++)
             if (it->second == 1)
                 res.push_back(it->first);
-        }
         
         return res;
     }
