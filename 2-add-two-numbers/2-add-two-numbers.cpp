@@ -18,7 +18,7 @@ public:
             if (l2) sum += l2->val, l2 = l2->next; // Add l2->val to sum
             current->next = new ListNode(sum%10);  // New node val of sum's right-most digit
             current = current->next;
-            sum /= 10;                             // Compute carry-over (1 or 0)
+            sum /= 10;                             // Compute carry-over
         }
         return res->next;
     }
